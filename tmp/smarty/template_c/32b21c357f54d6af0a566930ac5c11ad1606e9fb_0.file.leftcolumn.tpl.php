@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-04-19 14:06:24
+/* Smarty version 3.1.30, created on 2017-04-23 11:50:55
   from "F:\OpenServer\domains\myshop.ru\views\default\leftcolumn.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_58f744b03c2359_76258407',
+  'unifunc' => 'content_58fc6aefc298f6_64020371',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '32b21c357f54d6af0a566930ac5c11ad1606e9fb' => 
     array (
       0 => 'F:\\OpenServer\\domains\\myshop.ru\\views\\default\\leftcolumn.tpl',
-      1 => 1492599512,
+      1 => 1492937378,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_58f744b03c2359_76258407 (Smarty_Internal_Template $_smarty_tpl) {
+function content_58fc6aefc298f6_64020371 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
     <div id="leftColumn">
@@ -57,6 +57,21 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 ?>
 
         </div>
+
+        <div id="registerBox">
+            <div class="menuCaption showHidden" onclick="showRegisterBox();">Регистрация</div>
+            <div id="registerBoxHidden">
+                email:<br>
+                <input type="text" id="email" name="email" value=""><br>
+                пароль:<br>
+                <input type="password" id="pwd1" name="pwd1" value="">
+                повторите пароль:<br>
+                <input type="password" id="pwd2" name="pwd2" value="">
+                <input type="button" onclick="registerNewUser()" value="Зарегистрироваться">
+            </div>
+
+        </div>
+
         <div class="menuCaption">Корзина</div>
         <a href="/cart/" title="Перейти в корзину">В корзине</a>
         <span id="cartCntItems">

@@ -11,6 +11,21 @@
                     {/if}
                 {/foreach}
         </div>
+
+        <div id="registerBox">
+            <div class="menuCaption showHidden" onclick="showRegisterBox();">Регистрация</div>
+            <div id="registerBoxHidden">
+                email:<br>
+                <input type="text" id="email" name="email" value=""><br>
+                пароль:<br>
+                <input type="password" id="pwd1" name="pwd1" value="">
+                повторите пароль:<br>
+                <input type="password" id="pwd2" name="pwd2" value="">
+                <input type="button" onclick="registerNewUser()" value="Зарегистрироваться">
+            </div>
+
+        </div>
+
         <div class="menuCaption">Корзина</div>
         <a href="/cart/" title="Перейти в корзину">В корзине</a>
         <span id="cartCntItems">
