@@ -14,6 +14,7 @@
  */
 function loadPage ($smarty, $controllerName, $actionName = 'index')
 {
+//    echo PathPrefix . $controllerName . PathPostfix;
     require_once PathPrefix . $controllerName . PathPostfix;
 
     $function = $actionName . 'Action';
@@ -42,4 +43,11 @@ function d ($var = null, $die = 1)
     echo '</pre>';
 
     if ($die) die;
+}
+
+function redirect($url)
+{
+    if (!$url) $url = '/';
+    header("Location: $url");
+    exit();
 }

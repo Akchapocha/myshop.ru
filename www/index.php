@@ -49,4 +49,4 @@ $smarty->assign('cartCntItems', count($_SESSION['cart']));
  */
 loadPage($smarty, $controllerName, $actionName);
 
-/**#4.1 Эксперт PHP: Работа с пользователями */
+/**#4.5 Эксперт PHP: Авторизация пользователя*/
