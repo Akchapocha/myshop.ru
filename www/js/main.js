@@ -75,8 +75,6 @@ function getData(obj_form)
 function registerNewUser()
 {
     var postData = getData('#registerBox');
-
-
     $.ajax({
         type:'POST',
         async: false,
@@ -98,4 +96,46 @@ function registerNewUser()
             }
         }
     });
+}
+
+/**
+ * Авторизация пользователя
+ */
+function login()
+{
+    var email = $('#loginEmail').val();
+    var pwd = $('#loginPwd').val();
+
+    var postData = "email=" + email + "&pwd=" + pwd;
+
+    $.ajax({
+        type: 'POST',
+        async: false,
+        url: "/user/login/",
+        data: postData,
+        dataType: 'json',
+        success: function (data) {
+            if (data['success']){
+                $('#registerBox').hide();
+                $('#loginBox').hide();
+
+                $('#userLink').attr('href','/user/');
+                $('#userLink').html(data['displayName']);
+                $('#userBox').show();
+            } else {
+                alert(data['message']);
+            }
+        }
+    });
+}
+
+/**
+ * Показываем или прячем форму регистрации
+ */
+function showRegisterBox() {
+    if ($('#registerBoxHidden').css('display') != 'block'){
+        $('#registerBoxHidden').show();
+    } else {
+        $('#registerBoxHidden').hide();
+    }
 }

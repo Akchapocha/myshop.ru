@@ -39,6 +39,10 @@ $controllerName = isset($_GET['controller']) ? ucfirst($_GET['controller']) : 'I
  */
 $actionName = isset($_GET['action']) ? $_GET['action'] : 'index';
 
+if (isset($_SESSION['user'])){
+    $smarty->assign('arUser', $_SESSION['user']);
+}
+
 /**
  * Инициализируем переменную шаблонизатора количества элементов в корзине
  */
@@ -49,4 +53,4 @@ $smarty->assign('cartCntItems', count($_SESSION['cart']));
  */
 loadPage($smarty, $controllerName, $actionName);
 
-/**#4.5 Эксперт PHP: Авторизация пользователя*/
+#4.9 Эксперт PHP: Изменение данных пользователя №2 10.35
